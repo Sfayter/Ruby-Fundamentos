@@ -7,13 +7,14 @@ def boas_vindas
     puts "Vamos iniciar o jogo..."
 end
 
-def escolhe_opcao
+def jogada_jogador
     puts "Escolha uma opção:"
     puts "1 - Pedra"
     puts "2 - Papel"
     puts "3 - Tesoura"
     resposta = gets.strip
     return resposta.to_i
+    puts "\n\n"
 end
 
 def jogada_computador
@@ -41,19 +42,21 @@ def resultado(escolhe_jogador, escolhe_computador)
 end
 
 def jogo
-    escolhe_jogador = escolhe_opcao
+    escolhe_jogador = jogada_jogador
     escolhe_computador = jogada_computador
     resultado = resultado(escolhe_jogador, escolhe_computador)
-    puts "Você escolheu #{escolhe_jogador} if e o computador escolheu #{escolhe_computador}"
+    puts "\n"
+    puts "Você escolheu #{escolhe_jogador} e o computador escolheu #{escolhe_computador}"
+    puts "\n"
     puts "O resultado foi #{resultado}"
+    puts "\n\n"
 end
 
 boas_vindas
-jogo
-puts "Deseja jogar novamente? (s/n)"
-    resposta = gets.strip
-    if resposta.downcase == "s"
-        jogo
-    else
-        puts "Obrigado por jogar! Volte sempre!"
-    end
+loop do
+    jogo
+    puts "Deseja jogar novamente? (s/n)"
+    resposta = gets.strip.downcase != "s"
+    break if resposta
+end
+puts "Obrigado por jogar! Volte sempre!"
