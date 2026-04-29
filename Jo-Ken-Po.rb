@@ -50,13 +50,29 @@ def jogo
     puts "\n"
     puts "O resultado foi #{resultado}"
     puts "\n\n"
+    return resultado
 end
 
+
 boas_vindas
+pontos_jogador = 0
+pontos_computador = 0
+
 loop do
-    jogo
+    resultado_jogo = jogo
+    if resultado_jogo == "Você ganhou"
+        pontos_jogador += 1
+    elsif resultado_jogo == "Você perdeu"
+        pontos_computador += 1
+    end
+    puts "\n"
+    puts "Placar atual: Jogador = #{pontos_jogador} vs Computador = #{pontos_computador}"
+    puts "\n"
     puts "Deseja jogar novamente? (s/n)"
-    resposta = gets.strip.downcase != "s"
-    break if resposta
+    break if gets.strip.downcase != "s"
 end
+
+puts "Placar final: Jogador = #{pontos_jogador} | Computador = #{pontos_computador}"
+
+puts "\n"
 puts "Obrigado por jogar! Volte sempre!"

@@ -32,7 +32,7 @@ Escolha: Selecione sua jogada digitando o número correspondente:
 
 Resultado: O computador fará a escolha dele e o sistema exibirá quem venceu a rodada.
 
-Replay: Ao final, você pode digitar s para jogar novamente ou qualquer outra tecla para encerrar.
+Replay: Ao final, você pode digitar "s" para jogar novamente ou qualquer outra tecla para encerrar.
 
 🔧 Execução
 
